@@ -21,13 +21,15 @@ async def report(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     chat_name = mes.chat.title
 
     for admin_id in [x.user.id for x in await mes.chat.get_administrators()]:
-        try:
-            await context.bot.send_message(chat_id=admin_id,
-                                           text=f"Got an alert from <b>{chat_name}</b> chat",
-                                           parse_mode="HTML")
-            n += 1
-        except TelegramError:
-            pass
+        user = await mes.chat.get_member(admin_id)
+        if user.custom_title != "VIP":
+            try:
+                await context.bot.send_message(chat_id=admin_id,
+                                               text=f"Got an alert from <b>{chat_name}</b> chat",
+                                               parse_mode="HTML")
+                n += 1
+            except TelegramError:
+                pass
 
     reply_text = f"<b>Report sent to {n} admins!</b>"
     await mes.reply_text(text=reply_text,

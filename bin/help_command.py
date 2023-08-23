@@ -15,12 +15,12 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
                  "<code>/report</code> — report a message to administrator\n"
                  "<code>/roll</code> — roll a number from 1 to 100\n\n"
                  "Moderators:\n"
-                 "<code>/ban</code> — ban a user from chat(by reply)\n"
-                 "<code>/kick</code> — kick a user from chat(by reply)\n"
-                 "<code>/mute [n]</code> — mute a user for <code>n</code> minutes(by reply)\n\n"
+                 "<code>/ban</code> — ban a user from chat (by reply)\n"
+                 "<code>/kick</code> — kick a user from chat (by reply)\n"
+                 "<code>/mute [n]</code> — mute a user for <code>n</code> minutes (by reply)\n\n"
                  "Administrators:\n"
-                 "<code>/promote [type]</code> — promote a user. Available types: vip, moderator, "
-                 "admin (case sensitive)\n"
+                 "<code>/promote [type]</code> — promote a user. Available types: VIP, Moderator, "
+                 "Administrator (case sensitive) (by reply)\n"
                  "<code>/vip_mode</code> — toggle VIP mode in a chat. VIP mode allows only VIPs, moderators and "
                  "administrators to write.\n")
 
